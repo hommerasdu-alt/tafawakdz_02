@@ -1,11 +1,10 @@
-import { lazy, Suspense } from 'react';
-const Home = lazy(() => import('./pages/Home'));
-const About = lazy(() => import('./pages/About'));
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
 
-// Ensuite, enveloppe tes routes avec <Suspense>
-<Suspense fallback={<div>Chargement...</div>}>
-  <Routes>
-    <Route path="/" element={<Home />} />
-    <Route path="/about" element={<About />} />
-  </Routes>
-</Suspense>
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
