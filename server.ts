@@ -2,7 +2,6 @@ import 'dotenv/config';
 import express from 'express';
 import sql from 'mssql';
 import cors from 'cors';
-import { createServer as createViteServer } from 'vite';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
@@ -775,7 +774,6 @@ if (!process.env.VERCEL) {
     // Vite middleware for development
     if (process.env.NODE_ENV !== 'production') {
       try {
-        const vite = await createViteServer({
         const { createServer } = await import('vite');
         const vite = await createServer({
           server: { middlewareMode: true },
