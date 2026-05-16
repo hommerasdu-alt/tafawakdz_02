@@ -2,7 +2,10 @@ import 'dotenv/config';
 import express from 'express';
 import sql from 'mssql';
 import cors from 'cors';
+<<<<<<< HEAD
 import { createServer as createViteServer } from 'vite';
+=======
+>>>>>>> 1390258412dcaf8b1d57694e7e7623a6bd8b1534
 import path from 'path';
 import { fileURLToPath } from 'url';
 import fs from 'fs';
@@ -775,8 +778,13 @@ if (!process.env.VERCEL) {
     // Vite middleware for development
     if (process.env.NODE_ENV !== 'production') {
       try {
+<<<<<<< HEAD
         console.log('📦 Initializing Vite middleware...');
         const vite = await createViteServer({
+=======
+        const { createServer } = await import('vite');
+        const vite = await createServer({
+>>>>>>> 1390258412dcaf8b1d57694e7e7623a6bd8b1534
           server: { middlewareMode: true },
           appType: 'spa',
         });
